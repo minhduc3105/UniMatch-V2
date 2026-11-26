@@ -82,3 +82,23 @@ def obtain_cutmix_box(img_size, p=0.5, size_min=0.02, size_max=0.4, ratio_1=0.3,
     mask[y:y + cutmix_h, x:x + cutmix_w] = 1
 
     return mask
+
+
+def obtain_cutmix_box_hw(height, width, p=0.5, size_min=0.02, size_max=0.4,
+                         ratio_1=0.3, ratio_2=1 / 0.3):
+    """Rectangular CutMix mask for non-square R2S100K training crops."""
+    mask = torch.zeros(height, width)
+    if random.random() > p:
+        return mask
+
+    area = np.random.uniform(size_min, size_max) * height * width
+    for _ in range(20):
+        ratio = np.random.uniform(ratio_1, ratio_2)
+        cutmix_w = min(width, max(1, int(np.sqrt(area / ratio))))
+        cutmix_h = min(height, max(1, int(np.sqrt(area * ratio))))
+        x = np.random.randint(0, width - cutmix_w + 1)
+        y = np.random.randint(0, height - cutmix_h + 1)
+        mask[y:y + cutmix_h, x:x + cutmix_w] = 1
+        return mask
+
+    return mask

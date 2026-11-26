@@ -53,5 +53,10 @@ CLASSES = {'pascal': ['background', 'aeroplane', 'bicycle', 'bird', 'boat', 'bot
                       'dishwasher', 'screen', 'blanket', 'sculpture', 'hood', 'sconce',
                       'vase', 'traffic light', 'tray', 'ashcan', 'fan', 'pier', 'crt screen',
                       'plate', 'monitor', 'bulletin board', 'shower', 'radiator', 'glass', 
-                      'clock', 'flag']
+                      'clock', 'flag'],
+
+           'r2s100k': ['background', 'wet_road_region', 'road_region', 'mud', 'earthen_patch',
+                       'mountain_stones', 'dirt', 'vegetation_misc', 'distressed_patch',
+                       'drainage_grate', 'water_puddle', 'speed_breaker', 'misc',
+                       'gravel_patch', 'concrete_material']
            }

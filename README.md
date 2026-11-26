@@ -126,6 +126,10 @@ Please modify your dataset path in configuration files.
 
 ## Training
 
+### R2S100K Pseudo-Mask Experiment
+
+This repository also includes a dataset preparation, UniMatch V2 training, pseudo-mask export, and train-GT evaluation pipeline for R2S100K. See [the R2S100K guide](docs/r2s100k.md) for the data protocol and commands.
+
 ### UniMatch V2
 
 ```bash

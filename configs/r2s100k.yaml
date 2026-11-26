@@ -1,0 +1,18 @@
+# UniMatch V2 starting configuration for R2S100K.
+# Paths are supplied on the command line so the same config works locally and on Vast.
+dataset: r2s100k
+nclass: 15
+crop_size: 518
+batch_size: 2
+epochs: 40
+lr: 0.000005
+lr_multi: 40.0
+weight_decay: 0.01
+conf_thresh: 0.95
+seed: 42
+amp: true
+num_workers: 4
+backbone: dinov2_small
+pretrained_path: pretrained/dinov2_small.pth
+ignore_index: 255
+inference_stride: 344
